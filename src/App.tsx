@@ -5,6 +5,9 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import {
   ErrorComponent,
   notificationProvider,
+  // notificationProvider is deprecated.
+  // Use `useNotificationProvider` export as your notification provider.
+  // Get rid of all deprecated components through the app
   RefineSnackbarProvider,
   ThemedLayoutV2,
 } from "@refinedev/mui";
@@ -52,7 +55,9 @@ function App() {
                 dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
                 notificationProvider={notificationProvider}
                 routerProvider={routerBindings}
+                // I suggest that in addition to the standard auth implement an idle timer for auto logout for security reasons
                 authProvider={authProvider}
+                // move out in separate config file
                 resources={[
                   {
                     name: "blog_posts",
@@ -83,6 +88,8 @@ function App() {
                 }}
               >
                 <Routes>
+                  // Move out each parent route to separate file
+                  // Implement lazy loading
                   <Route
                     element={
                       <Authenticated
