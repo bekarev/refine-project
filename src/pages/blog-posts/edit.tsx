@@ -56,6 +56,7 @@ export const BlogPostEdit: React.FC<IResourceComponentsProps> = () => {
           name="content"
           rows={4}
         />
+        // Move out this Controller as reusable template
         <Controller
           control={control}
           name={"category.id"}

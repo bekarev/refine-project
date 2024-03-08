@@ -1,0 +1,2 @@
+- Integrate testing frameworks (e.g., Jest and React Testing Library) and write unit tests for critical components and functionalities.
+- Configure and enforce a consistent code style using Prettier

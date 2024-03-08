@@ -1,14 +1,6 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { IResourceComponentsProps, useMany } from "@refinedev/core";
-import {
-  DateField,
-  DeleteButton,
-  EditButton,
-  List,
-  MarkdownField,
-  ShowButton,
-  useDataGrid,
-} from "@refinedev/mui";
+import { DateField, DeleteButton, EditButton, List, MarkdownField, ShowButton, useDataGrid, } from "@refinedev/mui";
 import React from "react";
 
 export const BlogPostList: React.FC<IResourceComponentsProps> = () => {
@@ -27,6 +19,7 @@ export const BlogPostList: React.FC<IResourceComponentsProps> = () => {
     },
   });
 
+  // Define columns outside the component to improve readability
   const columns = React.useMemo<GridColDef[]>(
     () => [
       {
@@ -57,8 +50,7 @@ export const BlogPostList: React.FC<IResourceComponentsProps> = () => {
         headerName: "Category",
         minWidth: 300,
         valueGetter: ({ row }) => {
-          const value = row?.category;
-          return value;
+          return row?.category;
         },
         renderCell: function render({ value }) {
           return categoryIsLoading ? (

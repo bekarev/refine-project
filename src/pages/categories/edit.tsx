@@ -17,6 +17,7 @@ export const CategoryEdit: React.FC<IResourceComponentsProps> = () => {
         sx={{ display: "flex", flexDirection: "column" }}
         autoComplete="off"
       >
+        // Move out this TextField as reusable template
         <TextField
           {...register("title", {
             required: "This field is required",

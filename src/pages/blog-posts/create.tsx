@@ -51,6 +51,7 @@ export const BlogPostCreate: React.FC<IResourceComponentsProps> = () => {
           label={"Content"}
           name="content"
         />
+        // Move out this Controller as reusable template
         <Controller
           control={control}
           name={"category.id"}
